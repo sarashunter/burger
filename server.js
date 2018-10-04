@@ -10,7 +10,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
+var routes = require("./controllers/burgers_controller");
 
+app.use(routes);
 
 
 // Start our server so that it can begin listening to client requests.
