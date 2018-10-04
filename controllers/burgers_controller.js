@@ -4,18 +4,16 @@ var burger = require('../models/burger');
 var router = express.Router();
 
 router.get("/", function (req, res) {
-    // console.log("in get /");
-    // burger.all(function (data) {
-    //     console.log("in here");
-    //     var hbsObject = {
-    //         burgers: data
-    //     };
-    //     console.log(hbsObject);
-    //     res.render("index", hbsObject);
-    // });
+    console.log("in get /");
+    burger.all(function (data) {
+        console.log("in here");
+        var hbsObject = {
+            burgers: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
+    });
 
-    console.log("blah");
-    res.end('hmph');
 });
 
 // router.post("/api/cats", function (req, res) {
