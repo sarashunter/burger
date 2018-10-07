@@ -9,7 +9,17 @@ const orm = {
 
             cb(res);
         });
-    }
+    },
+    create: function(table, name, cb) {
+    
+        connection.query("INSERT INTO ?? (burger_name, devoured) VALUES (?, 0);", [table, name], function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+      }
 }
 
 // const insertOne = function(){};
