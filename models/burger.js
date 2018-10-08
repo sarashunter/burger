@@ -18,10 +18,11 @@ var burger = {
             cb(res);
         });
     },
-    // update: function(objColVals, condition, cb) {
-    //   orm.update("cats", objColVals, condition, function(res) {
-    //     cb(res);
-    //   });
+    update: function(objColVals, condition, cb) {
+        orm.update("burgers", objColVals, condition, function(res) {
+          cb(res);
+        });
+      },
     // },
     // delete: function(objColVals, condition, cb) {
     //   orm.delete("cats", objColVals, function(res){
