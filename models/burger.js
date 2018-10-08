@@ -13,23 +13,17 @@ var burger = {
             cb(res);
         });
     },
-    create: function (name, cb) {
-        orm.create("burgers", name, function (res) {
+    create: function (cols, vals, cb) {
+        orm.insertOne("burgers", cols, vals, function (res) {
             cb(res);
         });
     },
-    update: function(objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function(res) {
-          cb(res);
+    update: function (objColVals, condition, cb) {
+        orm.updateOne("burgers", objColVals, condition, function (res) {
+            cb(res);
         });
-      },
-    // },
-    // delete: function(objColVals, condition, cb) {
-    //   orm.delete("cats", objColVals, function(res){
-    //     cb(res);
-    //   })
-// }
+    },
+
 };
 
-// Export the database functions for the controller (catsController.js).
 module.exports = burger;
